@@ -8,6 +8,6 @@ namespace Buddy {
     static class us {
         public static UserContext db = new UserContext();
         public static User currentuser;
-        public static int testinggithub;
+        //public static int testinggithub;
     }
 }
