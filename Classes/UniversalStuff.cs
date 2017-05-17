@@ -16,15 +16,18 @@ namespace Buddy {
 
         public static void register(string name, string pass) {
             using (SHA512 sha = SHA512.Create()) {
-                byte[] hash = sha.ComputeHash(Encoding.UTF8.GetBytes(pass));
+                //check if username is taken
+                if (us.db.Users.Find(name) == null) {
+                    db.Users.Add(new User { username = name, password = sha.ComputeHash(Encoding.UTF8.GetBytes(pass)).ToString() });
+                } else {
+                    MessageBox.Show("username is in use", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            db.SaveChangesAsync();
+            
+            
 
-            //check if username is taken
-            if (us.db.Users.Find(name) == null) {
-                
-            } else {
-                MessageBox.Show("username is in use", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
     }
 
