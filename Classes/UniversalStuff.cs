@@ -9,5 +9,9 @@ namespace Buddy {
         public static UserContext db = new UserContext();
         public static User currentuser;
         //public static int testinggithub;
+
+        public static void register() {
+            
+        }
     }
 }
