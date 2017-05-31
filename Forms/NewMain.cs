@@ -58,6 +58,11 @@ namespace Buddy {
 
             us.register(usernametextbox2.Text, passwordtextbox2.Text);
 
+            this.Hide();
+            var NewHome = new NewHome();
+            NewHome.FormClosed += (s, args) => this.Close();
+            NewHome.Show();
+
             //byte[] hash;
             //using (SHA512 sha = SHA512.Create()) {
             //    hash = sha.ComputeHash(Encoding.UTF8.GetBytes(passwordtextbox.Text));
