@@ -55,28 +55,36 @@ namespace Buddy {
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            byte[] hash;
-            using (SHA512 sha = SHA512.Create()) {
-                hash = sha.ComputeHash(Encoding.UTF8.GetBytes(passwordtextbox.Text));
-            }
-            string x = string.Empty;
-            foreach (byte y in hash) {
-                x += y;
-            }
-            try {
-                User temp = new User { username = usernametextbox2.Text, password = x, friends = new List<User>() };
-                if (us.db.Users.Find(temp.username) == null) {
-                    us.db.Users.Add(temp);
-                    us.db.SaveChanges();
-                    Forms.MainScreen main = new Forms.MainScreen();
-                    main.Show();
-                    this.Hide();
-                } else {
-                    MessageBox.Show("User already exists with that username, choose new username", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            } catch (Exception ex) {
-                MessageBox.Show(ex.ToString(), "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            us.register(usernametextbox2.Text, passwordtextbox2.Text);
+
+            this.Hide();
+            var NewHome = new NewHome();
+            NewHome.FormClosed += (s, args) => this.Close();
+            NewHome.Show();
+
+            //byte[] hash;
+            //using (SHA512 sha = SHA512.Create()) {
+            //    hash = sha.ComputeHash(Encoding.UTF8.GetBytes(passwordtextbox.Text));
+            //}
+            //string x = string.Empty;
+            //foreach (byte y in hash) {
+            //    x += y;
+            //}
+            //try {
+            //    User temp = new User { username = usernametextbox2.Text, password = x, friends = new List<User>() };
+            //    if (us.db.Users.Find(temp.username) == null) {
+            //        us.db.Users.Add(temp);
+            //        us.db.SaveChanges();
+            //        Forms.MainScreen main = new Forms.MainScreen();
+            //        main.Show();
+            //        this.Hide();
+            //    } else {
+            //        MessageBox.Show("User already exists with that username, choose new username", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //} catch (Exception ex) {
+            //    MessageBox.Show(ex.ToString(), "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
     }
 }
