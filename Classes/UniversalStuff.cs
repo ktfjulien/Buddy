@@ -21,6 +21,7 @@ namespace Buddy {
                     db.Users.Add(new User { username = name, password = sha.ComputeHash(Encoding.UTF8.GetBytes(pass)).ToString() });
                 } else {
                     MessageBox.Show("username is in use", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
             db.SaveChangesAsync();

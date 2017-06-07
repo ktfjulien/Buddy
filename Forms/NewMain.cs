@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Buddy.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,9 +44,13 @@ namespace Buddy {
                     MessageBox.Show("Successfully logged in", "it worked", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //whosloggedin = db.Users.Where(u => u.username == usernametextbox.Text && u.password == x).ToList()[0];
                     us.currentuser = us.db.Users.Find(usernametextbox.Text);
-                    Forms.MainScreen main = new Forms.MainScreen();
-                    main.Show();
+                    //Forms.MainScreen main = new Forms.MainScreen();
+                    //main.Show();
+                    //this.Hide();
                     this.Hide();
+                    var main = new MainScreen();
+                    main.FormClosed += (s, args) => this.Close();
+                    main.Show();
                 } else {
                     MessageBox.Show("Your password is incorrect", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -55,13 +60,17 @@ namespace Buddy {
         }
 
         private void button2_Click(object sender, EventArgs e) {
-
-            us.register(usernametextbox2.Text, passwordtextbox2.Text);
+            try {
+                us.register(usernametextbox2.Text, passwordtextbox2.Text);
+            } catch {
+                return;
+            }
+            
 
             this.Hide();
-            var NewHome = new NewHome();
-            NewHome.FormClosed += (s, args) => this.Close();
-            NewHome.Show();
+            var main = new MainScreen();
+            main.FormClosed += (s, args) => this.Close();
+            main.Show();
 
             //byte[] hash;
             //using (SHA512 sha = SHA512.Create()) {
