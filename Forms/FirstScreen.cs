@@ -21,12 +21,6 @@ namespace Buddy {
             var register = new RegisterScreen();
             register.FormClosed += (s, args) => this.Close();
             register.Show();
-
-
-
-            //RegisterScreen register = new RegisterScreen(db);
-            //register.Show();
-            //this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e) {
@@ -35,11 +29,6 @@ namespace Buddy {
             var login = new LoginScreen();
             login.FormClosed += (s, args) => this.Close();
             login.Show();
-
-
-            //LoginScreen login = new LoginScreen(db);
-            //login.Show();
-            //this.Hide();
         }
     }
 }
