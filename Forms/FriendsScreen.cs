@@ -20,7 +20,7 @@ namespace Buddy.Forms {
         }
 
         private void BackButton_Click(object sender, EventArgs e) {
-            Close();
+            this.Close();
         }
     }
 }

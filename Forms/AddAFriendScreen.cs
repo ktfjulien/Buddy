@@ -21,7 +21,7 @@ namespace Buddy.Forms {
                 if (usernametextbox.Text != us.currentuser.username) {
                     //db.Users.Find(currentuser.username).friends += usernametextbox.Text + ",";
                     //db.Users.Find(usernametextbox.Text).friends += currentuser.username + ",";
-                    if (!(us.currentuser.friends == null)) {
+                    if (us.currentuser.friends != null) {
                         foreach (var x in us.currentuser.friends.ToArray()) {
                             poop.Add(x.username);
                         }
@@ -47,8 +47,8 @@ namespace Buddy.Forms {
         }
 
         private void CancelButton_Click(object sender, EventArgs e) {
-            MainScreen main = new MainScreen();
-            main.Show();
+            //MainScreen main = new MainScreen();
+            //main.Show();
             this.Close();
         }
     }

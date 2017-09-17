@@ -51,13 +51,12 @@ namespace Buddy.Forms {
         }
 
         private void BackButton_Click(object sender, EventArgs e) {
-            MainScreen main = new MainScreen();
-            main.Show();
+            //MainScreen main = new MainScreen();
+            //main.Show();
             this.Close();
         }
 
         private void LoadMessages() {
-            
             MainMessagesBox.Text = string.Join(Environment.NewLine, us.currentuser.ReceivedMessages.Select(b => b.content));
         }
 

@@ -1,0 +1,6 @@
+﻿code for properly opening new windows:
+
+this.Hide();
+var newwindow = new NewWindow();
+newwindow.FormClosed += (s, args) => this.Close();
+newwindow.Show();

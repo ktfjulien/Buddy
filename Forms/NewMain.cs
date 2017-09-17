@@ -60,11 +60,12 @@ namespace Buddy {
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            try {
+            //try {
                 us.register(usernametextbox2.Text, passwordtextbox2.Text);
-            } catch {
-                return;
-            }
+                us.currentuser = us.db.Users.Find(usernametextbox2.Text);
+            //} catch {
+            //    return;
+            //}
             
 
             this.Hide();

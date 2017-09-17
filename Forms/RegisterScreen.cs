@@ -30,9 +30,13 @@ namespace Buddy {
                 if (us.db.Users.Find(temp.username) == null) {
                     us.db.Users.Add(temp);
                     us.db.SaveChanges();
-                    LoginScreen login = new LoginScreen();
-                    login.Show();
                     this.Hide();
+                    var main = new Forms.MainScreen();
+                    main.FormClosed += (s, args) => this.Close();
+                    main.Show();
+                    //LoginScreen login = new LoginScreen();
+                    //login.Show();
+                    //this.Hide();
                 } else {
                     MessageBox.Show("User already exists with that username, choose new username", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

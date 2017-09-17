@@ -89,6 +89,12 @@
     <Compile Include="Forms\AddAFriendScreen.Designer.cs">
       <DependentUpon>AddAFriendScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ConversationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConversationsForm.Designer.cs">
+      <DependentUpon>ConversationsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FirstScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     <Compile Include="Classes\Database.cs" />
     <EmbeddedResource Include="Forms\AddAFriendScreen.resx">
       <DependentUpon>AddAFriendScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConversationsForm.resx">
+      <DependentUpon>ConversationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstScreen.resx">
       <DependentUpon>FirstScreen.cs</DependentUpon>
@@ -221,6 +230,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

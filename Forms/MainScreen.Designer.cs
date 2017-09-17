@@ -30,8 +30,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LogoutButton = new System.Windows.Forms.Button();
-            this.MessageButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SendMessageButton = new System.Windows.Forms.Button();
+            this.MessagesButton = new System.Windows.Forms.Button();
+            this.ConversationsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // FriendsListButton
@@ -82,25 +83,35 @@
             this.LogoutButton.UseVisualStyleBackColor = true;
             this.LogoutButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // MessageButton
+            // SendMessageButton
             // 
-            this.MessageButton.Location = new System.Drawing.Point(79, 21);
-            this.MessageButton.Name = "MessageButton";
-            this.MessageButton.Size = new System.Drawing.Size(102, 23);
-            this.MessageButton.TabIndex = 5;
-            this.MessageButton.Text = "Send Message";
-            this.MessageButton.UseVisualStyleBackColor = true;
-            this.MessageButton.Click += new System.EventHandler(this.MessageButton_Click);
+            this.SendMessageButton.Location = new System.Drawing.Point(79, 21);
+            this.SendMessageButton.Name = "SendMessageButton";
+            this.SendMessageButton.Size = new System.Drawing.Size(102, 23);
+            this.SendMessageButton.TabIndex = 5;
+            this.SendMessageButton.Text = "Send Message";
+            this.SendMessageButton.UseVisualStyleBackColor = true;
+            this.SendMessageButton.Click += new System.EventHandler(this.MessageButton_Click);
             // 
-            // button1
+            // MessagesButton
             // 
-            this.button1.Location = new System.Drawing.Point(92, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Messages";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.MessagesButton.Location = new System.Drawing.Point(92, 50);
+            this.MessagesButton.Name = "MessagesButton";
+            this.MessagesButton.Size = new System.Drawing.Size(75, 23);
+            this.MessagesButton.TabIndex = 1;
+            this.MessagesButton.Text = "Messages";
+            this.MessagesButton.UseVisualStyleBackColor = true;
+            this.MessagesButton.Click += new System.EventHandler(this.MessagesButton_Click);
+            // 
+            // ConversationsButton
+            // 
+            this.ConversationsButton.Location = new System.Drawing.Point(92, 79);
+            this.ConversationsButton.Name = "ConversationsButton";
+            this.ConversationsButton.Size = new System.Drawing.Size(124, 40);
+            this.ConversationsButton.TabIndex = 6;
+            this.ConversationsButton.Text = "Conversations";
+            this.ConversationsButton.UseVisualStyleBackColor = true;
+            this.ConversationsButton.Click += new System.EventHandler(this.ConversationsButton_Click);
             // 
             // MainScreen
             // 
@@ -108,8 +119,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(263, 216);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.MessageButton);
+            this.Controls.Add(this.ConversationsButton);
+            this.Controls.Add(this.MessagesButton);
+            this.Controls.Add(this.SendMessageButton);
             this.Controls.Add(this.LogoutButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -129,7 +141,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button LogoutButton;
-        private System.Windows.Forms.Button MessageButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SendMessageButton;
+        private System.Windows.Forms.Button MessagesButton;
+        private System.Windows.Forms.Button ConversationsButton;
     }
 }

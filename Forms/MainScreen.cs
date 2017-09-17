@@ -16,38 +16,59 @@ namespace Buddy.Forms {
         }
 
         private void AddFriendButton_Click(object sender, EventArgs e) {
-            Add_A_Friend_Screen add = new Add_A_Friend_Screen();
+            this.Hide();
+            var add = new Add_A_Friend_Screen();
+            add.FormClosed += (s, args) => this.Show();
             add.Show();
-            this.Close();
+            //Add_A_Friend_Screen add = new Add_A_Friend_Screen();
+            //add.Show();
+            //this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            NewMain first = new NewMain();
-            first.Show();
-            this.Close();
+
         }
 
         private void FriendsListButton_Click(object sender, EventArgs e) {
-            FriendsScreen friends = new FriendsScreen();
-            friends.Show();
-            this.Close();
+            this.Hide();
+            var fr = new FriendsScreen();
+            fr.FormClosed += (s, args) => this.Show();
+            fr.Show();
+            //FriendsScreen friends = new FriendsScreen();
+            //friends.Show();
+            //this.Close();
         }
 
         private void MessageButton_Click(object sender, EventArgs e) {
             if (us.currentuser.friends != null) {
-                SendAMessageScreen send = new SendAMessageScreen();
+                this.Hide();
+                var send = new SendAMessageScreen();
+                send.FormClosed += (s, args) => this.Show();
                 send.Show();
-                this.Close();
+                //SendAMessageScreen send = new SendAMessageScreen();
+                //send.Show();
+                //this.Close();
             } else {
                 MessageBox.Show("You must have friends to send messages", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             GC.Collect();
         }
 
-        private void button1_Click_1(object sender, EventArgs e) {
-            MessagesScreen message = new MessagesScreen();
-            message.Show();
-            this.Close();
+        private void MessagesButton_Click(object sender, EventArgs e) {
+            this.Hide();
+            var msg = new MessagesScreen();
+            msg.FormClosed += (s, args) => this.Show();
+            msg.Show();
+            //MessagesScreen message = new MessagesScreen();
+            //message.Show();
+            //this.Close();
+        }
+
+        private void ConversationsButton_Click(object sender, EventArgs e) {
+            this.Hide();
+            var con = new Forms.ConversationsForm();
+            con.FormClosed += (s, args) => this.Show();
+            con.Show();
         }
     }
 }

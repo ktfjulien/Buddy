@@ -42,8 +42,8 @@ namespace Buddy.Forms {
         }
 
         private void BackButton_Click(object sender, EventArgs e) {
-            MainScreen main = new MainScreen();
-            main.Show();
+            //MainScreen main = new MainScreen();
+            //main.Show();
             this.Close();
         }
 

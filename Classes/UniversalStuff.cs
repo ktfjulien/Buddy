@@ -18,17 +18,19 @@ namespace Buddy {
             using (SHA512 sha = SHA512.Create()) {
                 //check if username is taken
                 if (us.db.Users.Find(name) == null) {
-                    db.Users.Add(new User { username = name, password = sha.ComputeHash(Encoding.UTF8.GetBytes(pass)).ToString() });
+                    byte[] hash;
+                    hash = sha.ComputeHash(Encoding.UTF8.GetBytes(pass));
+                    string x = string.Empty;
+                    foreach (byte y in hash) {
+                        x += y;
+                    }
+                    db.Users.Add(new User { username = name, password = x });
                 } else {
                     MessageBox.Show("username is in use", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
-            db.SaveChangesAsync();
-            
-            
-
-            
+            db.SaveChanges();
         }
     }
 
