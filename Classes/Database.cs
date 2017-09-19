@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Buddy {
     public class UserContext : DbContext {
-        public UserContext() : base("name=BuddyDatabase") {
+        public UserContext() : base("name=Official") {
 
         }
         public DbSet<User> Users { get; set; }
