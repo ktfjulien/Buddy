@@ -45,5 +45,7 @@ namespace Buddy {
         public virtual User recipient { get; set; }
 
         public string content { get; set; }
+
+        public int TimeSent { get; set; }
     }
 }

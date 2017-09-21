@@ -25,20 +25,21 @@ namespace Buddy.Forms {
         }
 
         private void SendButton_Click(object sender, EventArgs e) {
+            //Message msg = new Message();
+            //try {
+            //   msg = new Message { content = ContentBox.Text, sender = us.currentuser, recipient = us.db.Users.Find(textBox1.Text) };
+            //} catch {
+            //    MessageBox.Show("User does not exist", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
 
-            Message msg = new Message();
-            try {
-               msg = new Message { content = ContentBox.Text, sender = us.currentuser, recipient = us.db.Users.Find(textBox1.Text) };
-            } catch {
-                MessageBox.Show("User does not exist", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
-            us.db.Messages.Add(msg);
-            us.currentuser.SentMessages.Add(us.db.Messages.Find(msg.ID));
-            User temp =us. db.Users.Find(textBox1.Text);
-            temp.ReceivedMessages.Add(us.db.Messages.Find(msg.ID));
+            //us.db.Messages.Add(msg);
+            //us.currentuser.SentMessages.Add(us.db.Messages.Find(msg.ID));
+            //User temp = us.db.Users.Find(textBox1.Text);
+            //temp.ReceivedMessages.Add(us.db.Messages.Find(msg.ID));
 
-            us. db.SaveChanges();
+            //us. db.SaveChanges();
+
+            us.SendMessage(textBox1.Text, ContentBox.Text);
         }
 
         private void BackButton_Click(object sender, EventArgs e) {

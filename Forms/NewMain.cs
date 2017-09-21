@@ -28,44 +28,54 @@ namespace Buddy {
 
 
 
-            byte[] hash;
-            if (us.db.Users.Any(u => u.username == usernametextbox.Text)) {
+            // THIS IS RIGHT BEFORE THE LOGIN METHOD
 
-                //hash text in password box and place bytes in to empty string x with foreach
-                using (SHA512 sha = SHA512.Create()) {
-                    hash = sha.ComputeHash(Encoding.UTF8.GetBytes(passwordtextbox.Text));
-                }
-                string x = string.Empty;
-                foreach (byte y in hash) {
-                    x += y;
-                }
 
-                if (us.db.Users.Any(u => u.username == usernametextbox.Text && u.password == x)) {
-                    MessageBox.Show("Successfully logged in", "it worked", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //whosloggedin = db.Users.Where(u => u.username == usernametextbox.Text && u.password == x).ToList()[0];
-                    us.currentuser = us.db.Users.Find(usernametextbox.Text);
-                    //Forms.MainScreen main = new Forms.MainScreen();
-                    //main.Show();
-                    //this.Hide();
-                    this.Hide();
-                    var main = new MainScreen();
-                    main.FormClosed += (s, args) => this.Close();
-                    main.Show();
-                } else {
-                    MessageBox.Show("Your password is incorrect", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            } else {
-                MessageBox.Show("Account doesn't exist", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            //byte[] hash;
+            //if (us.db.Users.Any(u => u.username == usernametextbox.Text)) {
+
+            //    //hash text in password box and place bytes in to empty string x with foreach
+            //    using (SHA512 sha = SHA512.Create()) {
+            //        hash = sha.ComputeHash(Encoding.UTF8.GetBytes(passwordtextbox.Text));
+            //    }
+            //    string x = string.Empty;
+            //    foreach (byte y in hash) {
+            //        x += y;
+            //    }
+
+            //    if (us.db.Users.Any(u => u.username == usernametextbox.Text && u.password == x)) {
+            //        MessageBox.Show("Successfully logged in", "it worked", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        //whosloggedin = db.Users.Where(u => u.username == usernametextbox.Text && u.password == x).ToList()[0];
+            //        us.currentuser = us.db.Users.Find(usernametextbox.Text);
+            //        //Forms.MainScreen main = new Forms.MainScreen();
+            //        //main.Show();
+            //        //this.Hide();
+            //        this.Hide();
+            //        var main = new MainScreen();
+            //        main.FormClosed += (s, args) => this.Close();
+            //        main.Show();
+            //    } else {
+            //        MessageBox.Show("Your password is incorrect", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //} else {
+            //    MessageBox.Show("Account doesn't exist", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+
+            us.Login(usernametextbox.Text, passwordtextbox.Text, this);
+
+
+
+
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            //try {
+            try {
                 us.register(usernametextbox2.Text, passwordtextbox2.Text);
                 us.currentuser = us.db.Users.Find(usernametextbox2.Text);
-            //} catch {
-            //    return;
-            //}
+            } catch {
+                return;
+            }
             
 
             this.Hide();
