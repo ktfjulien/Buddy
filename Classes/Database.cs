@@ -15,6 +15,7 @@ namespace Buddy {
         public DbSet<User> Users { get; set; }
         public DbSet<Message> Messages { get; set; }
 
+        
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder) {
         //    modelBuilder.Entity<Message>().map
@@ -34,6 +35,11 @@ namespace Buddy {
 
         public static implicit operator User(bool v) {
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return username;
         }
     }
 
