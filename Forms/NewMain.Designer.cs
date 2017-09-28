@@ -147,9 +147,9 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(94, 274);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 42);
+            this.label6.Size = new System.Drawing.Size(157, 42);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Sign Up";
+            this.label6.Text = "Register";
             // 
             // NewMain
             // 

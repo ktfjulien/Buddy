@@ -28,6 +28,7 @@
             this.MessageTextBox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.AddFriendButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -35,9 +36,9 @@
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(12, 37);
+            this.listBox1.Location = new System.Drawing.Point(12, 44);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(248, 484);
+            this.listBox1.Size = new System.Drawing.Size(248, 452);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -83,11 +84,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // AddFriendButton
+            // 
+            this.AddFriendButton.Location = new System.Drawing.Point(12, 502);
+            this.AddFriendButton.Name = "AddFriendButton";
+            this.AddFriendButton.Size = new System.Drawing.Size(75, 23);
+            this.AddFriendButton.TabIndex = 5;
+            this.AddFriendButton.Text = "Add";
+            this.AddFriendButton.UseVisualStyleBackColor = true;
+            this.AddFriendButton.Click += new System.EventHandler(this.AddFriendButton_Click);
+            // 
             // ConversationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 533);
+            this.ClientSize = new System.Drawing.Size(910, 531);
+            this.Controls.Add(this.AddFriendButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.MessageTextBox);
@@ -108,5 +120,6 @@
         private System.Windows.Forms.TextBox MessageTextBox;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddFriendButton;
     }
 }

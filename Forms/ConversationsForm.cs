@@ -12,13 +12,13 @@ namespace Buddy.Forms {
     public partial class ConversationsForm : Form {
         public ConversationsForm() {
             InitializeComponent();
-
+            listBox1.DataSource = us.currentuser.friends;
         }
 
         private void ConversationsForm_Load(object sender, EventArgs e) {
-            foreach (var x in us.currentuser.friends) {
-                listBox1.Items.Add(x.username);
-            }
+            //foreach (var x in us.currentuser.friends) {
+            //    listBox1.Items.Add(x.username);
+            //}
             var temp = us.currentuser.ReceivedMessages.Select(b => b);
             foreach (var x in temp) {
                 if (x.sender.username == (string)listBox1.SelectedItem) {
@@ -85,7 +85,13 @@ namespace Buddy.Forms {
 
         private void button1_Click(object sender, EventArgs e) {
             us.SendMessage(listBox1.SelectedItem.ToString(), MessageTextBox.Text);
+        }
 
+        private void AddFriendButton_Click(object sender, EventArgs e) {
+            this.Hide();
+            var add = new Add_A_Friend_Screen();
+            add.FormClosed += (s, args) => this.Show();
+            add.Show();
         }
     }
 }

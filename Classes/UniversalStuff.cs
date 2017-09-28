@@ -22,7 +22,7 @@ namespace Buddy {
                     foreach (byte y in hash) {
                         x += y;
                     }
-                    db.Users.Add(new User { username = name, password = x });
+                    db.Users.Add(new User { username = name, password = x, friends = new List<User>() });
                 } else {
                     MessageBox.Show("username is in use", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;

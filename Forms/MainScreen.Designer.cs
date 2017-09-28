@@ -105,7 +105,7 @@
             // 
             // ConversationsButton
             // 
-            this.ConversationsButton.Location = new System.Drawing.Point(92, 79);
+            this.ConversationsButton.Location = new System.Drawing.Point(66, 79);
             this.ConversationsButton.Name = "ConversationsButton";
             this.ConversationsButton.Size = new System.Drawing.Size(124, 40);
             this.ConversationsButton.TabIndex = 6;

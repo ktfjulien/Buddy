@@ -26,7 +26,6 @@ namespace Buddy.Forms {
                             poop.Add(x.username);
                         }
                     }
-                    
                     if (poop.Contains(usernametextbox.Text)) {
                         MessageBox.Show("That user is already your friend", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     } else {
@@ -34,15 +33,15 @@ namespace Buddy.Forms {
                         us.db.Users.Find(usernametextbox.Text).friends.Add(us.currentuser);
                         us.db.SaveChanges();
                         MessageBox.Show("Friend successfully added", "noice", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        MainScreen main = new MainScreen();
-                        main.Show();
+                        //MainScreen main = new MainScreen();
+                        //main.Show();
                         this.Close();
                     }
                 } else {
                     MessageBox.Show("You can't add yourself", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } else {
-                MessageBox.Show("User doesn't exist with that username", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("User doesn't exist", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
