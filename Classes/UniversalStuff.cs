@@ -69,7 +69,7 @@ namespace Buddy {
             //assume sender is us.currentuser
             Message msg = new Message();
             try {
-                msg = new Message { content = content,
+                msg = new Message { content = us.currentuser.username + ": " + content,
                     sender = us.currentuser,
                     recipient = us.db.Users.Find(recip),
                     TimeSent = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds };

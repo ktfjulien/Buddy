@@ -12,7 +12,7 @@ namespace Buddy.Forms {
     public partial class ConversationsForm : Form {
         public ConversationsForm() {
             InitializeComponent();
-
+            listBox1.DataSource = us.currentuser.friends;
         }
 
         private void ConversationsForm_Load(object sender, EventArgs e) {
@@ -37,12 +37,12 @@ namespace Buddy.Forms {
             User temp = us.db.Users.Find(listBox1.SelectedItem);
             var z = new List<Message>();
 
-            foreach (var x in temp.SentMessages) {
-                x.content = x.content.Insert(0, temp.username + ": ");
-                if (x.recipient == us.currentuser) {
-                    z.Add(x);
-                }
-            }
+            //foreach (var x in temp.SentMessages) {
+            //    x.content = x.content.Insert(0, temp.username + ": ");
+            //    if (x.recipient == us.currentuser) {
+            //        z.Add(x);
+            //    }
+            //}
 
             foreach (var x in us.currentuser.SentMessages) {
                 x.content = x.content.Insert(0, us.currentuser.username + ": ");
