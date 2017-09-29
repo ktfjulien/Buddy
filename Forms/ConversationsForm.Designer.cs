@@ -29,6 +29,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.AddFriendButton = new System.Windows.Forms.Button();
+            this.LogoutButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -68,6 +70,7 @@
             this.textBox1.Size = new System.Drawing.Size(248, 20);
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "Search friends";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
@@ -94,11 +97,31 @@
             this.AddFriendButton.UseVisualStyleBackColor = true;
             this.AddFriendButton.Click += new System.EventHandler(this.AddFriendButton_Click);
             // 
+            // LogoutButton
+            // 
+            this.LogoutButton.Location = new System.Drawing.Point(184, 502);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(75, 23);
+            this.LogoutButton.TabIndex = 6;
+            this.LogoutButton.Text = "Logout";
+            this.LogoutButton.UseVisualStyleBackColor = true;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(98, 502);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(75, 23);
+            this.DeleteButton.TabIndex = 7;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            // 
             // ConversationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 531);
+            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.LogoutButton);
             this.Controls.Add(this.AddFriendButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
@@ -121,5 +144,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button AddFriendButton;
+        private System.Windows.Forms.Button LogoutButton;
+        private System.Windows.Forms.Button DeleteButton;
     }
 }
