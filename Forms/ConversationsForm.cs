@@ -12,7 +12,7 @@ namespace Buddy.Forms {
     public partial class ConversationsForm : Form {
         public ConversationsForm() {
             InitializeComponent();
-            listBox1.DataSource = us.currentuser.friends;
+            listBox1.DataSource = us.currentuser.friends.ToList();
         }
 
         private void ConversationsForm_Load(object sender, EventArgs e) {
@@ -84,7 +84,7 @@ namespace Buddy.Forms {
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            us.SendMessage(listBox1.SelectedItem.ToString(), MessageTextBox.Text);
+            us.SendMessage(listBox1.SelectedIndex.ToString(), MessageTextBox.Text);
         }
 
         private void AddFriendButton_Click(object sender, EventArgs e) {
