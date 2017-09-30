@@ -57,7 +57,7 @@ namespace Buddy.Forms {
         }
 
         private void LoadMessages() {
-            MainMessagesBox.Text = string.Join(Environment.NewLine, us.currentuser.ReceivedMessages.Select(b => b.content));
+            //MainMessagesBox.Text = string.Join(Environment.NewLine, us.currentuser.ReceivedMessages.Select(b => b.content));
         }
 
         private void RefreshButton_Click(object sender, EventArgs e) {
