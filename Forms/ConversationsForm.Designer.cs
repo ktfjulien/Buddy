@@ -31,6 +31,7 @@
             this.AddFriendButton = new System.Windows.Forms.Button();
             this.LogoutButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // listBox1
@@ -64,6 +65,8 @@
             // 
             // textBox1
             // 
+            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(12, 11);
             this.textBox1.Name = "textBox1";
@@ -115,11 +118,22 @@
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 546);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 8;
+            // 
             // ConversationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 531);
+            this.ClientSize = new System.Drawing.Size(910, 579);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.LogoutButton);
             this.Controls.Add(this.AddFriendButton);
@@ -146,5 +160,6 @@
         private System.Windows.Forms.Button AddFriendButton;
         private System.Windows.Forms.Button LogoutButton;
         private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -63,10 +63,6 @@ namespace Buddy {
             //}
 
             us.Login(usernametextbox.Text, passwordtextbox.Text, this);
-
-
-
-
         }
 
         private void button2_Click(object sender, EventArgs e) {
@@ -79,7 +75,7 @@ namespace Buddy {
             
 
             this.Hide();
-            var main = new MainScreen();
+            var main = new ConversationsForm();
             main.FormClosed += (s, args) => this.Close();
             main.Show();
 

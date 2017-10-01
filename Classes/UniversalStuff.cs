@@ -46,14 +46,14 @@ namespace Buddy {
                 }
 
                 if (us.db.Users.Any(u => u.username == name && u.password == x)) {
-                    MessageBox.Show("Successfully logged in", "it worked", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Successfully logged in", "it worked", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //whosloggedin = db.Users.Where(u => u.username == usernametextbox.Text && u.password == x).ToList()[0];
                     us.currentuser = us.db.Users.Find(name);
                     //Forms.MainScreen main = new Forms.MainScreen();
                     //main.Show();
                     //this.Hide();
                     f.Hide();
-                    var main = new Forms.MainScreen();
+                    var main = new Forms.ConversationsForm();
                     main.FormClosed += (s, args) => f.Close();
                     main.Show();
                 } else {

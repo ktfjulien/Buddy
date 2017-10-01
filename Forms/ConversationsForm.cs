@@ -13,6 +13,15 @@ namespace Buddy.Forms {
         public ConversationsForm() {
             InitializeComponent();
             listBox1.DataSource = us.currentuser.friends.ToList();
+            string[] s = new string[us.currentuser.friends.ToArray().Length];
+            var bud = new AutoCompleteStringCollection();
+            for (int i = 0; i < s.Length; i++) {
+                s[i] = listBox1.Items[0].ToString();
+            }
+            bud.AddRange(s);
+            textBox1.AutoCompleteCustomSource = bud;
+            
+            comboBox1.DataSource = us.currentuser.friends.ToList();
         }
 
         private void ConversationsForm_Load(object sender, EventArgs e) {
@@ -33,11 +42,7 @@ namespace Buddy.Forms {
             
         }
 
-        private void LoadMessages(string otheruser) {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {
+        private void LoadMessages() {
             MessagesBox.Text = String.Empty;
             User temp = us.db.Users.Find(listBox1.SelectedItem.ToString());
             var z = new List<Message>();
@@ -68,6 +73,10 @@ namespace Buddy.Forms {
             }
         }
 
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {
+            LoadMessages();
+        }
+
         private void textBox1_Enter(object sender, EventArgs e) {
             if (textBox1.Text == "Search friends") {
                 textBox1.Text = String.Empty;
@@ -86,6 +95,7 @@ namespace Buddy.Forms {
 
         private void button1_Click(object sender, EventArgs e) {
             us.SendMessage(listBox1.SelectedItem.ToString(), MessageTextBox.Text);
+            LoadMessages();
         }
 
         private void AddFriendButton_Click(object sender, EventArgs e) {
