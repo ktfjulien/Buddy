@@ -13,13 +13,13 @@ namespace Buddy.Forms {
         public ConversationsForm() {
             InitializeComponent();
             listBox1.DataSource = us.currentuser.friends.ToList();
-            string[] s = new string[us.currentuser.friends.ToArray().Length];
-            var bud = new AutoCompleteStringCollection();
-            for (int i = 0; i < s.Length; i++) {
-                s[i] = listBox1.Items[0].ToString();
-            }
-            bud.AddRange(s);
-            textBox1.AutoCompleteCustomSource = bud;
+            //string[] s = new string[us.currentuser.friends.ToArray().Length];
+            //var bud = new AutoCompleteStringCollection();
+            //for (int i = 0; i < s.Length; i++) {
+            //    s[i] = listBox1.Items[0].ToString();
+            //}
+            //bud.AddRange(s);
+            //textBox1.AutoCompleteCustomSource = bud;
             
             comboBox1.DataSource = us.currentuser.friends.ToList();
         }
