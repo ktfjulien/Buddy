@@ -32,7 +32,7 @@ namespace Buddy.Forms {
                         us.currentuser.friends.Add(us.db.Users.Find(usernametextbox.Text));
                         us.db.Users.Find(usernametextbox.Text).friends.Add(us.currentuser);
                         us.db.SaveChanges();
-                        MessageBox.Show("Friend successfully added", "noice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //MessageBox.Show("Friend successfully added", "noice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //MainScreen main = new MainScreen();
                         //main.Show();
                         this.Close();

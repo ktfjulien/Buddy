@@ -22,6 +22,7 @@ namespace Buddy.Forms {
             //textBox1.AutoCompleteCustomSource = bud;
             
             comboBox1.DataSource = us.currentuser.friends.ToList();
+            comboBox1.Text = String.Empty;
         }
 
         private void ConversationsForm_Load(object sender, EventArgs e) {
@@ -95,6 +96,7 @@ namespace Buddy.Forms {
 
         private void button1_Click(object sender, EventArgs e) {
             us.SendMessage(listBox1.SelectedItem.ToString(), MessageTextBox.Text);
+            textBox1.Text = String.Empty;
             LoadMessages();
         }
 
@@ -105,6 +107,7 @@ namespace Buddy.Forms {
             add.StartPosition = FormStartPosition.CenterParent;
             add.ShowDialog();
             listBox1.DataSource = us.currentuser.friends.ToList();
+            comboBox1.DataSource = us.currentuser.friends.ToList();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e) {
@@ -114,6 +117,15 @@ namespace Buddy.Forms {
             //        listBox1.Items.Add(str.username);
             //    }
             //}
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
+            foreach (var z in listBox1.Items) {
+                if (z.ToString() == comboBox1.Text) {
+                    listBox1.SelectedItem = z;
+                    break;
+                }
+            }
         }
     }
 }

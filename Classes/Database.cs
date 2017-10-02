@@ -14,12 +14,6 @@ namespace Buddy {
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Message> Messages { get; set; }
-
-        
-
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder) {
-        //    modelBuilder.Entity<Message>().map
-        //}
     }
 
     public class User {
@@ -37,8 +31,7 @@ namespace Buddy {
             throw new NotImplementedException();
         }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return username;
         }
     }
@@ -49,9 +42,18 @@ namespace Buddy {
         
         public virtual User sender { get; set; }
         public virtual User recipient { get; set; }
+        public virtual Group group { get; set; }
 
         public string content { get; set; }
 
         public int TimeSent { get; set; }
+    }
+
+    public class Group {
+        [Key]
+        public int ID;
+
+        public virtual ICollection<User> members { get; set; }
+        public virtual ICollection<Message> messages { get; set; }
     }
 }
